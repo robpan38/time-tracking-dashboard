@@ -1,0 +1,338 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 150ms ease-out;
+}
+
+:root {
+    /* colors */
+    --blue: hsl(246, 80%, 60%);
+
+    --lightRedWork: hsl(15, 100%, 70%);
+    --softBluePlay: hsl(195, 74%, 62%);
+    --lightRedStudy: hsl(348, 100%, 68%);
+    --limeGreenExercise: hsl(145, 58%, 55%);
+    --violetSocial: hsl(264, 64%, 52%);
+    --softOrangeSelf: hsl(43, 84%, 65%);
+
+    --veryDarkBlue: hsl(226, 43%, 10%);
+    --darkBlue: hsl(235, 46%, 20%);
+    --desaturatedBlue: hsl(235, 45%, 61%);
+    --paleBlue: hsl(236, 100%, 87%);
+
+    font-family: 'Rubik', sans-serif;
+    color: var(--paleBlue);
+}
+
+body {
+    height: 100vh;
+    min-height: 650px;
+    width: 100vw;
+    min-width: 750px;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    background-color: var(--veryDarkBlue);
+    display: grid;
+    grid-template-areas: "person work play study"
+                         "person exercise social selfcare";
+    grid-template-rows: 24% 24%;
+    grid-template-columns: 16% 16% 16% 16%;
+    justify-content: center;
+    align-content: center;
+    gap: 20px 20px;
+}
+
+.person {
+    grid-area: person;
+    display: flex;
+    flex-direction: column;
+}
+
+.part1 {
+    background-color: var(--blue);
+    height: calc(62.5% + 20px);
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.part1 img {
+    display: block;
+    height: 25%;
+    width: 30%;
+    margin-top: 10%;
+    margin-left: 10%;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+.part1 .report {
+    margin-top: 15%;
+    margin-left: 10%;
+    font-size: max(0.8rem, 0.8vw);
+}
+
+.part1 .name1, .name2 {
+    margin-top: 2%;
+    margin-left: 10%;
+    font-size: max(1.6rem, 1.6vw);
+    font-weight: 300;
+    color: white;
+}
+
+.part2 {
+    background-color: var(--darkBlue);
+    height: calc(37.5% - 20px);
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.part2 .weekly {
+    color: white;
+}
+
+.part2 p {
+    margin-left: 10%;
+    color: var(--desaturatedBlue);
+    font-size: max(0.9rem, 0.9vw);
+    cursor: pointer;
+}
+
+.part2 p:hover {
+    color: white;
+}
+
+.lower {
+    background-color: var(--darkBlue);
+    height: 75%;
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lower:hover {
+    background-color: var(--desaturatedBlue);
+    cursor: pointer;
+}
+
+.lower p {
+    margin-left: 10%;
+}
+
+.lower .activities {
+    display: flex;
+    position: relative;
+    margin: 6% 0%;
+    color: white;
+}
+
+.lower .activities img {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+}
+
+.lower .period {
+    color: white;
+    font-size: max(2.2rem, 2.2vw);
+    font-weight: 300;
+}
+
+.lower .lastPeriod {
+    margin-top: 3%;
+    font-size: max(0.8rem, 0.8vw);
+}
+
+.work {
+    background-image: url("images/icon-work.svg");
+    background-position: 95% -10%;
+    background-repeat: no-repeat;
+    background-color: var(--lightRedWork);
+    grid-area: work;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 25px;
+}
+
+.play {
+    background-image: url("images/icon-play.svg");
+    background-position: 95% -10%;
+    background-repeat: no-repeat;
+    background-color: var(--softBluePlay);
+    grid-area: play;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 25px;
+}
+
+.study {
+    background-image: url("images/icon-study.svg");
+    background-position: 95% -10%;
+    background-repeat: no-repeat;
+    background-color: var(--lightRedStudy);
+    grid-area: study;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 25px;
+}
+
+.exercise {
+    background-image: url("images/icon-exercise.svg");
+    background-position: 95% 0%;
+    background-repeat: no-repeat;
+    background-color: var(--limeGreenExercise);
+    grid-area: exercise;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 25px;
+}
+
+.social {
+    background-image: url("images/icon-social.svg");
+    background-position: 95% -10%;
+    background-repeat: no-repeat;
+    background-color: var(--violetSocial);
+    grid-area: social;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 25px;
+}
+
+.selfcare {
+    background-image: url("images/icon-self-care.svg");
+    background-position: 95% -10%;
+    background-repeat: no-repeat;
+    background-color: var(--softOrangeSelf);
+    grid-area: selfcare;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 25px;
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        height: 220vh;
+        min-height: 695px;
+        min-width: 270px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 0px 0px;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .person {
+        height: 15%;
+        width: 80%;
+        display: flex;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .part1 {
+        height: 50%;
+        align-items: flex-start;
+    }
+
+    .part1 img {
+        margin-left: 0;
+        margin-top: 0;
+        position: absolute;
+        top: 10%;
+        left: 5%;
+    }
+
+    .part1 .report {
+        margin-left: 50%;
+        margin-top: 0;
+    }
+
+    .part1 .name1, .name2 {
+        margin-left: 50%;
+    }
+
+    .part2 {
+        height: 50%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .part2 p {
+        margin-left: 0;
+    }
+
+    .lower p {
+        margin-left: 0;
+    }
+
+    .lower .activities img {
+        position: relative;
+        right: -10%;
+        top: 15%;
+    }
+
+    .lower .activities {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .lower .periods {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .work {
+        height: 15%;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .play {
+        height: 15%;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .study {
+        height: 15%;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .exercise {
+        height: 15%;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .social {
+        height: 15%;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .selfcare {
+        height: 15%;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
